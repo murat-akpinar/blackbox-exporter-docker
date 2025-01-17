@@ -1,0 +1,43 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+    networks:
+      - grafana
+    restart: always
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus-data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - grafana
+    restart: always
+
+  blackbox-exporter:
+    image: prom/blackbox-exporter:latest
+    container_name: blackbox-exporter
+    ports:
+      - "9115:9115"
+    networks:
+      - grafana
+    restart: always
+
+networks:
+  grafana:
+    driver: bridge
+
+volumes:
+  grafana-data:
+  prometheus-data:
