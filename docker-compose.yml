@@ -8,7 +8,7 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
-      - ./grafana-data:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
     networks:
       - grafana
     restart: always
@@ -19,7 +19,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./prometheus-data:/prometheus
+      - prometheus-data:/prometheus
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     networks:
       - grafana
