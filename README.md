@@ -9,15 +9,22 @@ Bu proje, **Prometheus Blackbox Exporter**'ı izlemek ve analiz etmek için Graf
 
 ```plaintext
 blackbox-exporter-docker/
-├── provisioning/
-│   ├── dashboards/
-│   │   └── dashboard.yml       # Dashboard provisioning yapılandırma dosyası
-│   └── datasources/
-│       └── datasource.yml      # Prometheus veri kaynağı provisioning dosyası
-dashboards/
-└── blackbox-exporter.json      # Dashboard tasarımını ve panelleri tanımlayan JSON dosyası
-docker-compose.yml              # Docker servis tanımları
-prometheus.yml                  # Prometheus konfigürasyon dosyası
+├── dashboards
+│   └── blackbox-exporter.json            # Dashboard tasarımını ve panelleri tanımlayan JSON dosyası
+├── docker-compose.yml
+├── grafana
+│   └── provisioning
+│       ├── dashboards                    # Dashboard provisioning yapılandırma dosyası
+│       │   └── dashboard.yml
+│       └── datasources
+│           └── datasource.yml            # Prometheus veri kaynağı provisioning dosyası
+├── image
+│   └── Screenshot_20250118.png
+├── LICENSE
+├── prometheus.yml                        # Prometheus konfigürasyon dosyası izlemek
+└── README.md
+
+7 directories, 8 files
 ```
 
 ---
