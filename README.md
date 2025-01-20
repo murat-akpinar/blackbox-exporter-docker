@@ -1,7 +1,7 @@
 
 # Blackbox Exporter ile Grafana Dashboard Kurulumu
 
-Bu proje, **Prometheus Blackbox Exporter**'ı izlemek ve analiz etmek için Grafana'da bir dashboard otomatik olarak yüklemek amacıyla hazırlanmıştır. Dashboard otomatik olarak `Prometheus` veri kaynağı ile ilişkilendirilir ve Blackbox Exporter'ın HTTP probelerini görselleştirir.
+**Prometheus Blackbox Exporter**'ı izlemek ve analiz etmek için Grafana'da bir dashboard otomatik olarak yüklemek amacıyla hazırlanmıştır. Dashboard otomatik olarak `Prometheus` veri kaynağı ile ilişkilendirilir ve Blackbox Exporter'ın HTTP probelerini görselleştirir.
 
 ---
 
