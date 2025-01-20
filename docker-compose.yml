@@ -7,11 +7,13 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - TZ=Europe/Istanbul
     volumes:
       - grafana-data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ./grafana/dashboards:/var/lib/grafana/dashboards
       - ./dashboards:/var/lib/grafana/dashboards
+      - /usr/share/zoneinfo/Europe/Istanbul:/etc/localtime:ro
     networks:
       - grafana
     restart: always
